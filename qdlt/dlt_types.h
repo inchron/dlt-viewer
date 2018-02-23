@@ -29,6 +29,7 @@
 **                                                                            **
 **  AUTHOR    : Alexander Wenzel Alexander.AW.Wenzel@bmw.de                   **
 **              Markus Klein                                                  **
+**              Matthias Dörfel <matthias.doerfel@inchron.com>                **
 **                                                                            **
 **  PURPOSE   :                                                               **
 **                                                                            **
@@ -48,6 +49,7 @@
 ** --------     -------------------------  ---------------------------------- **
 **  aw          Alexander Wenzel           BMW                                **
 **  mk          Markus Klein               Fraunhofer ESK                     **
+**  df          Matthias Dörfel            INCHRON GmbH                       **
 *******************************************************************************/
 
 #ifndef DLT_TYPES_H
@@ -55,7 +57,9 @@
 #include <stdarg.h>
 #include <stdint.h>
 
+#if !(defined(__MINGW32__) || defined(__MINGW64__))
 typedef int pid_t;
+#endif
 #ifdef TARGET_OS_MAC
 typedef unsigned long speed_t;
 #else
